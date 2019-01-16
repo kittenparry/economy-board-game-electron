@@ -16,7 +16,7 @@ app.on('ready', function(){
   //load html into the window
   //file://dirname/main_window.html
   main_window.loadURL(url.format({
-    pathname: path.join(__dirname, 'main_window.html'),
+    pathname: path.join(__dirname, 'assets/html/main_window.html'),
     protocol: 'file',
     slashes: true,
   }));
@@ -64,5 +64,5 @@ if(process.env.NODE_ENV !== 'production'){
         role: 'reload'
       }
     ]
-	});
+  });
 }
