@@ -1,5 +1,6 @@
 const fs = require('fs');
 const os = require('os');
+const c = require('./constants');
 
 class Availables{
   constructor(name, cost, position){
@@ -17,7 +18,7 @@ class Property extends Availables{
     this.owner = null;
     this.house_count = 0;
     this.has_hotel = false;
-    this.rent = rent
+    this.rent = rent //rent is doubled if all colours are owned (even if mortgaged)
     this.is_mortgaged = false;
   }
 }
@@ -59,10 +60,8 @@ miscs = [];
 tiles = [];
 availables = [];
 
-//probably need to be adjusted for main.js working one folder above.
-//or just move main.js here?
-prep = __dirname + '/info/';
-e = 'utf8';
+prep = c.PREPATH;
+e = c.ENCODING;
 make_properties = function(){
   path = prep + 'property/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
@@ -117,10 +116,24 @@ make_miscs = function(){
   }
 };
 make_tiles = function(){
-
+  combined = properties.concat(decks, stations, utils, taxes, miscs);
+  for(i=0;i<40;i++){
+    combined.forEach(function(item){
+      if(item.position == i){
+        tiles.push(item);
+      }
+    });
+  }
 };
 make_availables = function(){
-
+  combined = properties.concat(stations, utils);
+  for(i=0;i<40;i++){
+    combined.forEach(function(item){
+      if(item.position == i){
+        availables.push(item);
+      }
+    });
+  }
 };
 module.exports = {
   properties: properties,
