@@ -13,4 +13,4 @@ properties.make_availables();
 cards.make_cards();
 cards.shuffle_cards();
 p1 = new players.Player('Gordon', false);
-console.log(p1);
+document.write(p1);
