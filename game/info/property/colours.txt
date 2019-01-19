@@ -1,8 +1,8 @@
 brown
 brown
-light blue
-light blue
-light blue
+light_blue
+light_blue
+light_blue
 pink
 pink
 pink
@@ -18,5 +18,5 @@ yellow
 green
 green
 green
-dark blue
-dark blue
+dark_blue
+dark_blue
