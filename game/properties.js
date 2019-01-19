@@ -105,7 +105,7 @@ make_taxes = function(){
   costs = [200, 100];
   positions = [4, 38];
   for(i=0;i<names.length;i++){
-    taxes.push(new Tax(names[i], costs, positions[i]));
+    taxes.push(new Tax(names[i], costs[i], positions[i]));
   }
 };
 make_miscs = function(){

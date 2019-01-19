@@ -55,6 +55,7 @@ class functions_basic {
       if(this.position >= 40){
         this.money += con.GO_SALARY;
         main.print_message(`${this.avatar} passed GO and collected $${con.GO_SALARY} as their salary.`);
+        main.draw_players();
       }
       this.position %= 40;
     }else{
@@ -81,6 +82,7 @@ class functions_basic {
       if(this.money >= cur_tile.cost){
         this.money -= cur_tile.cost;
         main.print_message(`${this.avatar} paid $${cur_tile.cost} in ${cur_tile.name}.`);
+        main.draw_players();
       }else{
         main.print_message('mortage stuff');
       }

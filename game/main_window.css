@@ -16,6 +16,7 @@ div {
   left: 1%;
   width: 75%;
   height: 90%;
+  background: #BFDBAE;
 }
 #div_stats {
   position: absolute;
@@ -91,6 +92,7 @@ div {
 }
 #div_dies {
   border: 0px;
+  background: transparent;
 }
 #div_activity {
   overflow-y: auto;
