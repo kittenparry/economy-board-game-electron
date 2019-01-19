@@ -49,9 +49,10 @@ function draw_tiles(){
 function draw_players(){
   avatars = players.avatars;
   doc = document.getElementById('div_players');
+  var temp = ''
   avatars.forEach(function(avatar){
-    temp = `<div class='player_profile'>${avatar.avatar} $${avatar.money}</div>`
-    doc.innerHTML += temp;
+    temp += `<div class='player_profile'>${avatar.avatar} $${avatar.money}</div>`
+    doc.innerHTML = temp;
   });
 }
 function draw_mid(){
@@ -69,9 +70,9 @@ function draw_positions(){
     doc = document.getElementById(`tile_stop_${avatar.position}`).innerHTML += `${avatar.avatar}`;
   });
 }
-function print_messages(msg){
+function print_message(msg){
   news = document.getElementById('activity_feed');
-  news.innerHTML += `<li>${msg}</li>`;
+  news.innerHTML = `<li>${msg}</li>${news.innerHTML}`;
 }
 function print_prompt(msg, title = '', end = ''){
   doc_prompt = document.getElementById('div_prompt');
@@ -81,11 +82,20 @@ function print_prompt(msg, title = '', end = ''){
   doc_prompt.style.display = 'block';
   if(title != ''){
     doc_title.style.display = 'block';
+    doc_title.innerHTML = title;
   }else{
     doc_title.style.display = 'none';
   }
+  doc_body.innerHTML = `<p>${msg}</p> ${end}`;
+}
+function reset_prompt(){
+  doc_prompt = document.getElementById('div_prompt');
+  doc_title = document.getElementById('div_prompt_title');
+  doc_add = document.getElementById('div_prompt_add');
 
-  
+  doc_prompt.style.display = 'none';
+  doc_title.style.display = 'none';
+  doc_add.style.display = 'none';
 }
 function draw_all(){
   draw_board();
@@ -99,5 +109,8 @@ function draw_all(){
 module.exports = {
   draw_all: draw_all,
   draw_positions: draw_positions,
-  print_messages: print_messages,
+  draw_players: draw_players,
+  print_message: print_message,
+  print_prompt: print_prompt,
+  reset_prompt: reset_prompt,
 };

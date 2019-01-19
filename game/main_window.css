@@ -102,7 +102,7 @@ div {
   top: 35%;
   left: 30%;
   border: 1px solid #36454F;
-  display: block; /* none/block */
+  display: none; /* none/block */
   background: #F0F0F0;
 }
 #div_prompt_title {
@@ -115,5 +115,14 @@ div {
   color: #F0F0F0;
   text-align: center;
   font-weight: bold;
+  display: none;
+}
+#div_prompt_body {
+  position: relative;
+  top: 20%;
+}
+#div_prompt_add {
+  top: 20%;
+  position: relative;
   display: none;
 }
