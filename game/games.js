@@ -5,6 +5,7 @@ const players = require('./players');
 class Game{
   constructor(player_count){
     this.player_count = player_count;
+    this.turn = 1;
     this.make_players();
     this.make_makes();
   }

@@ -56,11 +56,48 @@ function draw_players(){
 }
 function draw_mid(){
   game_mid = document.getElementById('game_mid');
-  game_mid.innerHTML += '<button>roll die</button>';
+  game_mid.innerHTML += `<button onclick='players.avatars[0].roll_die();'>roll die</button>`;
+  game_mid.innerHTML += `<div id='div_dies'><div class='div_die' id='div_die_1'></div><div class='div_die' id='div_die_2'></div><span id='div_double_die'></div></div>`;
+}
+function draw_positions(){
+  avatars = players.avatars;
+  //looks very inefficient
+  for(i=0;i<40;i++){
+    document.getElementById(`tile_stop_${i}`).innerHTML = '';
+  }
+  avatars.forEach(function(avatar){
+    doc = document.getElementById(`tile_stop_${avatar.position}`).innerHTML += `${avatar.avatar}`;
+  });
+}
+function print_messages(msg){
+  news = document.getElementById('activity_feed');
+  news.innerHTML += `<li>${msg}</li>`;
+}
+function print_prompt(msg, title = '', end = ''){
+  doc_prompt = document.getElementById('div_prompt');
+  doc_title = document.getElementById('div_prompt_title');
+  doc_body = document.getElementById('div_prompt_body');
+
+  doc_prompt.style.display = 'block';
+  if(title != ''){
+    doc_title.style.display = 'block';
+  }else{
+    doc_title.style.display = 'none';
+  }
+
+  
+}
+function draw_all(){
+  draw_board();
+  draw_sidebar();
+  draw_tiles();
+  draw_players();
+  draw_mid();
+  draw_positions();
 }
 
-draw_board();
-draw_sidebar();
-draw_tiles();
-draw_players();
-draw_mid();
+module.exports = {
+  draw_all: draw_all,
+  draw_positions: draw_positions,
+  print_messages: print_messages,
+};

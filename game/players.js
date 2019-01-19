@@ -1,8 +1,10 @@
+func_basic = require('./players_func_basic');
 
 //extend some functions from other .js files
 //instead of polluting this file
-class Player{
+class Player extends func_basic{
   constructor(avatar, ai){
+    super();
     this.money = 1500;
     this.properties = [] //remove this probably?
     this.position = 0;

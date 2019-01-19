@@ -1,6 +1,6 @@
 const fs = require('fs');
 const os = require('os');
-const c = require('./constants');
+const con = require('./constants');
 
 class Card{
   constructor(name, description, id){
@@ -13,8 +13,8 @@ chests = [];
 chances = [];
 
 function make_cards(){
-  path = c.PREPATH + 'card/';
-  e = c.ENCODING;
+  path = con.PREPATH + 'card/';
+  e = con.ENCODING;
   cc_names = fs.readFileSync(path + 'community_chests.txt', e).split(os.EOL);
   c_names = fs.readFileSync(path + 'chances.txt', e).split(os.EOL);
   for(i=0;i<cc_names.length;i++){

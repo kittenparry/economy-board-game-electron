@@ -57,7 +57,7 @@ div {
   width: 15px;
 }
 .colour {
-  height:5px;
+  height: 5px;
 }
 .brown {
   background-color: maroon;
@@ -82,4 +82,38 @@ div {
 }
 .dark_blue {
   background-color: navy;
+}
+.div_die {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+#div_dies {
+  border: 0px;
+}
+#div_activity {
+  overflow-y: auto;
+}
+#div_prompt {
+  position: absolute;
+  width: 25%;
+  height: 20%;
+  top: 35%;
+  left: 30%;
+  border: 1px solid #36454F;
+  display: block; /* none/block */
+  background: #F0F0F0;
+}
+#div_prompt_title {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  height: 15%;
+  width: 100%;
+  background: #36454F;
+  color: #F0F0F0;
+  text-align: center;
+  font-weight: bold;
+  display: none;
 }

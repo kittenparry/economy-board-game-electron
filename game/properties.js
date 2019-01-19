@@ -1,6 +1,6 @@
 const fs = require('fs');
 const os = require('os');
-const c = require('./constants');
+const con = require('./constants');
 
 class Availables{
   constructor(name, cost, position){
@@ -60,8 +60,8 @@ miscs = [];
 tiles = [];
 availables = [];
 
-prep = c.PREPATH;
-e = c.ENCODING;
+prep = con.PREPATH;
+e = con.ENCODING;
 make_props = function(){
   path = prep + 'property/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
