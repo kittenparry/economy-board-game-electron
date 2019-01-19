@@ -1,3 +1,5 @@
+const properties = require('./properties');
+
 function draw_board(){
   top_row = '<tr>';
   for(i=20;i<31;i++){
@@ -19,4 +21,29 @@ function draw_board(){
   board.innerHTML += top_row + mid_row + bot_row;
 
 }
+function draw_sidebar(){
+  tile_temp = `<tr><td><ul>
+  <li>name</li>
+  <li>cost/rent</li>
+  <li>colour</li>
+  <li>position</li>
+  <li>houses</li>
+  <li>hotel</li>
+  <ul></td></tr>`;
+  document.getElementById('table_side_top').innerHTML += tile_temp;
+  document.getElementById('table_side_bot').innerHTML += tile_temp;
+}
+function draw_tiles(){
+  tiles = properties.tiles;
+  for(i=0;i<40;i++){
+    tile = document.getElementById('tile_' + i);
+    tile.innerHTML = `${tiles[i].name}`;
+    if(tiles[i].colour !== undefined){
+      tile.innerHTML += ` ${tiles[i].colour}`;
+    }
+  }
+}
+
 draw_board();
+draw_sidebar();
+draw_tiles();

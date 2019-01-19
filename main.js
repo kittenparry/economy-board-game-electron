@@ -11,7 +11,7 @@ app.on('ready', function(){
   //create window
   main_window = new BrowserWindow({
     width: 1280,
-    height: 720,
+    height: 1024,
   });
   //load html into the window
   //file://dirname/main_window.html
@@ -29,7 +29,7 @@ app.on('ready', function(){
   //insert menu
   Menu.setApplicationMenu(main_menu);
   //start with dev tools opened
-  main_window.webContents.openDevTools();
+  //main_window.webContents.openDevTools();
 });
 //menu template
 const main_menu_template = [

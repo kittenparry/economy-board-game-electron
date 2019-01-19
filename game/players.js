@@ -15,7 +15,8 @@ class Player{
     this.is_bankrupt = false;
   }
 }
-
+avatars = [];
 module.exports = {
   Player: Player,
+  avatars: avatars,
 };

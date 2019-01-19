@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>Economy Board Game</title>
     <link rel='stylesheet' type='text/css' href='main_window.css'/>
   </head>
   <body>
-    <div id="div_game_board">
-      <table id="table_game_board"></table>
+    <div id='div_game_board'>
+      <table id='table_game_board'></table>
     </div>
-    <div id="div_stats">current tile - stats - selected tile</div>
-    <div id="div_players">all players stats</div>
-    <div id="div_activity">activity feed</div>
-    <script src="test.js"></script>
-    <script src="main_window.js"></script>
+    <div id='div_stats'>
+      <table id='table_side_top'></table>
+      <div id='div_side_mid'>
+        <h3><span id='player_avatar'>Player</span></h3>
+        Money: $<span id='player_money'></span><br/>
+        <button>Properties</button>
+      </div>
+      <table id='table_side_bot'></table>
+    </div>
+    <div id='div_players'>all players stats</div>
+    <div id='div_activity'>activity feed</div>
+    <script src='main.js'></script>
+    <script src='main_window.js'></script>
+    <script src='test.js'></script>
   </body>
 </html>
