@@ -10,13 +10,13 @@ let main_window;
 app.on('ready', function(){
   //create window
   main_window = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
   });
   //load html into the window
   //file://dirname/main_window.html
   main_window.loadURL(url.format({
-    pathname: path.join(__dirname, 'assets/html/main_window.html'),
+    pathname: path.join(__dirname, 'game/main_window.html'),
     protocol: 'file',
     slashes: true,
   }));
@@ -28,6 +28,8 @@ app.on('ready', function(){
   const main_menu = Menu.buildFromTemplate(main_menu_template);
   //insert menu
   Menu.setApplicationMenu(main_menu);
+  //start with dev tools opened
+  main_window.webContents.openDevTools();
 });
 //menu template
 const main_menu_template = [

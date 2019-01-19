@@ -18,7 +18,7 @@ class Property extends Availables{
     this.owner = null;
     this.house_count = 0;
     this.has_hotel = false;
-    this.rent = rent //rent is doubled if all colours are owned (even if mortgaged)
+    this.rent = rent; //rent is doubled if all colours are owned (even if mortgaged)
     this.is_mortgaged = false;
   }
 }
@@ -51,7 +51,7 @@ class Misc{
     this.position = position;
   }
 }
-properties = [];
+props = [];
 decks = [];
 stations = [];
 utils = [];
@@ -62,7 +62,7 @@ availables = [];
 
 prep = c.PREPATH;
 e = c.ENCODING;
-make_properties = function(){
+make_props = function(){
   path = prep + 'property/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
   costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL);
@@ -72,7 +72,7 @@ make_properties = function(){
   hotels = fs.readFileSync(path + 'hotels.txt', e).split(os.EOL);
   rents = fs.readFileSync(path + 'rents.txt', e).split(os.EOL);
   for(i=0;i<names.length;i++){
-    properties.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i], hotels[i], rents[i]));
+    props.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i], hotels[i], rents[i]));
   }
 };
 make_decks = function(){
@@ -116,7 +116,7 @@ make_miscs = function(){
   }
 };
 make_tiles = function(){
-  combined = properties.concat(decks, stations, utils, taxes, miscs);
+  combined = props.concat(decks, stations, utils, taxes, miscs);
   for(i=0;i<40;i++){
     combined.forEach(function(item){
       if(item.position == i){
@@ -126,7 +126,7 @@ make_tiles = function(){
   }
 };
 make_availables = function(){
-  combined = properties.concat(stations, utils);
+  combined = props.concat(stations, utils);
   for(i=0;i<40;i++){
     combined.forEach(function(item){
       if(item.position == i){
@@ -136,7 +136,7 @@ make_availables = function(){
   }
 };
 module.exports = {
-  properties: properties,
+  props: props,
   decks: decks,
   stations: stations,
   utils: utils,
@@ -144,7 +144,7 @@ module.exports = {
   miscs: miscs,
   tiles: tiles,
   availables: availables,
-  make_properties: make_properties,
+  make_props: make_props,
   make_decks: make_decks,
   make_stations: make_stations,
   make_utils: make_utils,
