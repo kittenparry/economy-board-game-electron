@@ -65,20 +65,20 @@ e = con.ENCODING;
 make_props = function(){
   path = prep + 'property/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
-  costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL);
-  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL);
+  costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL).map(Number);
+  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
   colours = fs.readFileSync(path + 'colours.txt', e).split(os.EOL);
   houses = fs.readFileSync(path + 'houses.txt', e).split(os.EOL);
-  hotels = fs.readFileSync(path + 'hotels.txt', e).split(os.EOL);
-  rents = fs.readFileSync(path + 'rents.txt', e).split(os.EOL);
+  hotels = fs.readFileSync(path + 'hotels.txt', e).split(os.EOL).map(Number);
+  rents = fs.readFileSync(path + 'rents.txt', e).split(os.EOL).map(Number);
   for(i=0;i<names.length;i++){
-    props.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i], hotels[i], rents[i]));
+    props.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i].split(" ").map(Number), hotels[i], rents[i]));
   }
 };
 make_decks = function(){
   path = prep + 'deck/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
-  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL);
+  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
   for(i=0;i<names.length;i++){
     decks.push(new Deck(names[i], positions[i]));
   }
@@ -87,7 +87,7 @@ make_stations = function(){
   path = prep + 'station/';
   names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
   costs = 200;
-  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL);
+  positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
   for(i=0;i<names.length;i++){
     stations.push(new Station(names[i], costs, positions[i]));
   }

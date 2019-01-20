@@ -64,7 +64,7 @@ class functions_basic {
     var cur_tile = p.tiles[this.position];
     if(p.availables.includes(cur_tile)){
       if(cur_tile.owner !== null && cur_tile.owner !== this){
-        //owned by someone else
+        this.pay_rent(cur_tile);
       }else if(cur_tile.owner === this){
         var title = 'Already owned by you.';
         var msg = 'Check the sidebar to buy houses/hotels.';
@@ -101,13 +101,71 @@ class functions_basic {
           //TODO: make a separate function to handle jail
           break;
         default:
-          break;
       }
     }
     main.draw_positions();
   }
-  pay_rent(){
-    
+  pay_rent(prop = properties.tiles[this.position]){
+    var p = properties;
+    var rent;
+    if(p.props.includes(prop)){
+      var houses = prop.houses;
+      if(prop.house_count >= 1){
+        rent = houses[prop.house_count-1];
+        main.print_message(`${prop.name} has ${prop.house_count} houses. Rent is $${rent}.`);
+      }else if(prop.has_hotel){
+        rent = prop.hotel;
+        main.print_message(`${prop.name} has a hotel. Rent is $${rent}.`);
+      }else{
+        rent = prop.rent;
+        main.print_message(`Rent of ${prop.name} is $${rent}.`);
+      }
+    }else if(p.stations.includes(prop)){
+      var station_count = 0;
+      p.stations.forEach(function(station){
+        if(station.owner == prop.owner){
+          station_count += 1;
+        }
+      });
+      switch(station_count){
+        case 4:
+          rent = 200;
+          break;
+        case 3:
+          rent = 100;
+          break;
+        case 2:
+          rent = 50;
+          break;
+        default:
+          rent = 25;
+      }
+      main.print_message(`${prop.owner.avatar} owns ${station_count} station(s). Rent is $${rent}.`);
+    }else{
+      //4x dice if 1 owned, 10x dice if 2.
+      //prompt to roll die?
+      var util_count = 0;
+      p.utils.forEach(function(util){
+        if(util.owner == prop.owner){
+          util_count += 1;
+        }
+      });
+      if(util_count == 2){
+        main.print_message(`${prop.owner.avatar} owns both of the utilities. Roll die and pay 10 times.`);
+        console.log('roll here for 2');
+      }else{
+        main.print_message(`${prop.owner.avatar} owns one of the utilities. Roll die and pay 4 times.`);
+      }
+    }
+    if(this.money >= rent){
+      this.money -= rent;
+      prop.owner.money += rent;
+      main.print_message(`${this.avatar} has paid ${prop.owner.avatar} a total of $${rent}.`);
+    }else{
+      main.print_message(`${this.avatar} doesn't have enough money to pay the rent.`);
+      //mortgage stuff
+    }
+    main.draw_players();
   }
   auction(prop = null){
     main.print_message('auction. for now just closes the prompt.');
