@@ -1,7 +1,7 @@
 const con = require('./constants');
 const properties = require('./properties');
 
-class functions_basic {
+class functions_basic{
   roll_die(){
     main.reset_prompt();
     var die1 = Math.floor(Math.random() * 6) + 1;
@@ -155,6 +155,7 @@ class functions_basic {
         console.log('roll here for 2');
       }else{
         main.print_message(`${prop.owner.avatar} owns one of the utilities. Roll die and pay 4 times.`);
+        console.log('roll here for 1');
       }
     }
     if(this.money >= rent){
@@ -172,5 +173,4 @@ class functions_basic {
     main.reset_prompt();
   }
 }
-
 module.exports = functions_basic;

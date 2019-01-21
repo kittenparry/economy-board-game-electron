@@ -105,7 +105,6 @@ function draw_all(){
   draw_mid();
   draw_positions();
 }
-
 module.exports = {
   draw_all: draw_all,
   draw_positions: draw_positions,
