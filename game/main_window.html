@@ -6,20 +6,23 @@
     <link rel='stylesheet' type='text/css' href='main_window.css'/>
   </head>
   <body>
-    <div id='div_game_board'>
+    <div id='div_game_board' class='flex-5'>
       <table id='table_game_board'></table>
+      Turn: <span id='span_turns'>0</span>
     </div>
-    <div id='div_stats'>
-      <table id='table_side_top'></table>
-      <div id='div_side_mid'>
-        <h3><span id='player_avatar'>Player</span></h3>
-        Money: $<span id='player_money'></span><br/>
-        <button>Properties</button>
+    <div id='div_side' class='flex-1 flex-col'>
+      <div id='div_stats' class='flex-3'>
+        <table id='table_side_top'></table>
+        <div id='div_side_mid'>
+          <h3><span id='player_avatar'>Player</span></h3>
+          Money: $<span id='player_money'></span><br/>
+          <button>Properties</button>
+        </div>
+        <table id='table_side_bot'></table>
       </div>
-      <table id='table_side_bot'></table>
+      <div id='div_activity' class='flex-3'><ul id='activity_feed'></ul></div>
+      <div id='div_players' class='flex-1'>all players stats</div>
     </div>
-    <div id='div_players'>all players stats</div>
-    <div id='div_activity'><ul id='activity_feed'></ul></div>
     <!-- TODO: add a limit to activity feed so it doesn't bloat page so much -->
     <div id='div_prompt'>
       <div id='div_prompt_title'></div>
