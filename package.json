@@ -1,14 +1,14 @@
 {
-  "name": "economy-board-game-electron",
-  "version": "1.0.0",
-  "description": "Recreation of that board game for educational purposes.",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "author": "Edvin Boul",
-  "license": "MIT",
-  "dependencies": {
-    "electron": "^4.0.1"
-  }
+	"name": "economy-board-game-electron",
+	"version": "1.0.0",
+	"description": "Recreation of that board game for educational purposes.",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "Edvin Boul",
+	"license": "MIT",
+	"dependencies": {
+		"electron": "^4.0.1"
+	}
 }

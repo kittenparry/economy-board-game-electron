@@ -1,127 +1,128 @@
 body {
-  background: #F0F0F0;
-  color: #36454F;
+	background: #F0F0F0;
+	color: #36454F;
 }
 table, td, th {
-  border: 1px solid #36454F;
+	border: 1px solid #36454F;
 }
 div {
-  background: #fff;
-  margin: 5px;
-  border: 1px solid #36454F;
+	background: #fff;
+	margin: 5px;
+	border: 1px solid #36454F;
 }
 #div_game_board {
-  background: #BFDBAE;
+	background: #BFDBAE;
 }
 #div_game_board table {
-  border: 0px;
+	border: 0px;
 }
 #div_game_board td {
-  width: 10%;
-  height: 10%;
+	width: 10%;
+	height: 10%;
 }
 #div_stats table {
-  border: 0px;
-  width: 100%;
+	border: 0px;
+	width: 100%;
 }
 .tile_stop {
-  border: 1px solid #36454F;
-  height: 15px;
-  width: 15px;
+	border: 1px solid #36454F;
+	height: 15px;
+	width: 15px;
 }
 .colour {
-  height: 5px;
+	height: 5px;
 }
 .brown {
-  background-color: maroon;
+	background-color: maroon;
 }
 .light_blue {
-  background-color: lightblue;
+	background-color: lightblue;
 }
 .pink {
-  background-color: fuchsia;
+	background-color: fuchsia;
 }
 .orange {
-  background-color: orange;
+	background-color: orange;
 }
 .red {
-  background-color: red;
+	background-color: red;
 }
 .yellow {
-  background-color: yellow;
+	background-color: yellow;
 }
 .green {
-  background-color: green;
+	background-color: green;
 }
 .dark_blue {
-  background-color: navy;
+	background-color: navy;
 }
 .div_die {
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  text-align: center;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	text-align: center;
 }
 #div_dies {
-  border: 0px;
-  background: transparent;
+	border: 0px;
+	background: transparent;
 }
 #div_activity {
-  overflow-y: scroll;
+	overflow-y: scroll;
 }
 #div_prompt {
-  position: absolute;
-  width: 25%;
-  height: 20%;
-  top: 35%;
-  left: 30%;
-  border: 1px solid #36454F;
-  display: none; /* none/block */
-  background: #F0F0F0;
+	position: absolute;
+	width: 25%;
+	height: 20%;
+	top: 35%;
+	left: 30%;
+	border: 1px solid #36454F;
+	display: none;
+	/* none/block */
+	background: #F0F0F0;
 }
 #div_prompt_title {
-  margin: 0;
-  position: absolute;
-  top: 0;
-  height: 15%;
-  width: 100%;
-  background: #36454F;
-  color: #F0F0F0;
-  text-align: center;
-  font-weight: bold;
-  display: none;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	height: 15%;
+	width: 100%;
+	background: #36454F;
+	color: #F0F0F0;
+	text-align: center;
+	font-weight: bold;
+	display: none;
 }
 #div_prompt_body {
-  position: relative;
-  top: 20%;
+	position: relative;
+	top: 20%;
 }
 #div_prompt_add {
-  top: 20%;
-  position: relative;
-  display: none;
+	top: 20%;
+	position: relative;
+	display: none;
 }
 .flew-row {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .flex-col {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .flex-1 {
-  flex: 1;
+	flex: 1;
 }
 .flex-2 {
-  flex: 2;
+	flex: 2;
 }
 .flex-3 {
-  flex: 3;
+	flex: 3;
 }
 .flex-5 {
-  flex: 5;
+	flex: 5;
 }
 body, html {
-  display: flex;
-  flex-direction: row;
-  height: 99%;
+	display: flex;
+	flex-direction: row;
+	height: 99%;
 }
