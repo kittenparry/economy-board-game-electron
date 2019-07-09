@@ -101,7 +101,7 @@ div {
 	position: relative;
 	display: none;
 }
-.flew-row {
+.flex-row {
 	display: flex;
 	flex-direction: row;
 }
