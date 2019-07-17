@@ -1,14 +1,14 @@
 //probably need to be adjusted for main.js working one folder above.
 //or just move main.js here?
 //sys
-PREPATH = __dirname + '/info/';
-ENCODING = 'utf8';
+const PREPATH = __dirname + '/info/';
+const ENCODING = 'utf8';
 
 //maybe separate them to constants-game.js?
 //ingame
-MAX_HOUSES = 32;
-MAX_HOTELS = 12;
-GO_SALARY = 200;
+const MAX_HOUSES = 32;
+const MAX_HOTELS = 12;
+const GO_SALARY = 200;
 
 module.exports = {
 	PREPATH,
