@@ -114,11 +114,12 @@ function draw_all() {
 	draw_mid();
 	draw_positions();
 }
+
 module.exports = {
-	draw_all: draw_all,
-	draw_positions: draw_positions,
-	draw_players: draw_players,
-	print_message: print_message,
-	print_prompt: print_prompt,
-	reset_prompt: reset_prompt,
+	draw_all,
+	draw_positions,
+	draw_players,
+	print_message,
+	print_prompt,
+	reset_prompt,
 };
