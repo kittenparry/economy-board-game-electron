@@ -62,7 +62,7 @@ availables = [];
 
 prep = con.PREPATH;
 e = con.ENCODING;
-make_props = function() {
+make_props = () => {
 	path = prep + 'property/';
 	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
 	costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL).map(Number);
@@ -75,7 +75,7 @@ make_props = function() {
 		props.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i].split(" ").map(Number), hotels[i], rents[i]));
 	}
 };
-make_decks = function() {
+make_decks = () => {
 	path = prep + 'deck/';
 	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
 	positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
@@ -83,7 +83,7 @@ make_decks = function() {
 		decks.push(new Deck(names[i], positions[i]));
 	}
 };
-make_stations = function() {
+make_stations = () => {
 	path = prep + 'station/';
 	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
 	costs = 200;
@@ -92,7 +92,7 @@ make_stations = function() {
 		stations.push(new Station(names[i], costs, positions[i]));
 	}
 };
-make_utils = function() {
+make_utils = () => {
 	names = ['Electric Company', 'Water Works'];
 	costs = 150;
 	positions = [12, 28];
@@ -100,7 +100,7 @@ make_utils = function() {
 		utils.push(new Util(names[i], costs, positions[i]));
 	}
 };
-make_taxes = function() {
+make_taxes = () => {
 	names = ['Income Tax', 'Luxury Tax'];
 	costs = [200, 100];
 	positions = [4, 38];
@@ -108,14 +108,14 @@ make_taxes = function() {
 		taxes.push(new Tax(names[i], costs[i], positions[i]));
 	}
 };
-make_miscs = function() {
+make_miscs = () => {
 	names = ["GO", "In Jail/Just Visiting", "Free Parking", "Go to Jail"];
 	positions = [0, 10, 20, 30];
 	for (i = 0; i < names.length; i++) {
 		miscs.push(new Misc(names[i], positions[i]));
 	}
 };
-make_tiles = function() {
+make_tiles = () => {
 	combined = props.concat(decks, stations, utils, taxes, miscs);
 	for (i = 0; i < 40; i++) {
 		combined.forEach(function(item) {
@@ -125,7 +125,7 @@ make_tiles = function() {
 		});
 	}
 };
-make_availables = function() {
+make_availables = () => {
 	combined = props.concat(stations, utils);
 	for (i = 0; i < 40; i++) {
 		combined.forEach(function(item) {

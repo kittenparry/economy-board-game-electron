@@ -12,7 +12,7 @@ class Card {
 chests = [];
 chances = [];
 
-function make_cards() {
+make_cards = () => {
 	path = con.PREPATH + 'card/';
 	e = con.ENCODING;
 	cc_names = fs.readFileSync(path + 'community_chests.txt', e).split(os.EOL);
@@ -21,12 +21,12 @@ function make_cards() {
 		chests.push(new Card("chest", cc_names[i], i));
 		chances.push(new Card("chance", c_names[i], i));
 	}
-}
+};
 
-function shuffle_cards() {
+shuffle_cards = () => {
 	chests.sort(() => Math.random() - 0.5);
 	chances.sort(() => Math.random() - 0.5);
-}
+};
 
 module.exports = {
 	chests,
