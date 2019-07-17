@@ -135,21 +135,22 @@ make_availables = function() {
 		});
 	}
 };
+
 module.exports = {
-	props: props,
-	decks: decks,
-	stations: stations,
-	utils: utils,
-	taxes: taxes,
-	miscs: miscs,
-	tiles: tiles,
-	availables: availables,
-	make_props: make_props,
-	make_decks: make_decks,
-	make_stations: make_stations,
-	make_utils: make_utils,
-	make_taxes: make_taxes,
-	make_miscs: make_miscs,
-	make_tiles: make_tiles,
-	make_availables: make_availables,
+	props,
+	decks,
+	stations,
+	utils,
+	taxes,
+	miscs,
+	tiles,
+	availables,
+	make_props,
+	make_decks,
+	make_stations,
+	make_utils,
+	make_taxes,
+	make_miscs,
+	make_tiles,
+	make_availables,
 };

@@ -33,4 +33,5 @@ class Game {
 		cards.shuffle_cards();
 	}
 }
+
 module.exports = Game;

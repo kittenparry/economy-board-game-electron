@@ -16,7 +16,8 @@ class Player extends func_basic {
 	}
 }
 avatars = [];
+
 module.exports = {
-	Player: Player,
-	avatars: avatars,
+	Player,
+	avatars,
 };

@@ -173,4 +173,5 @@ class functions_basic {
 		main.reset_prompt();
 	}
 }
+
 module.exports = functions_basic;

@@ -27,9 +27,10 @@ function shuffle_cards() {
 	chests.sort(() => Math.random() - 0.5);
 	chances.sort(() => Math.random() - 0.5);
 }
+
 module.exports = {
-	chests: chests,
-	chances: chances,
-	make_cards: make_cards,
-	shuffle_cards: shuffle_cards,
+	chests,
+	chances,
+	make_cards,
+	shuffle_cards,
 };
