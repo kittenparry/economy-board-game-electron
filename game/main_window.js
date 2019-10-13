@@ -43,6 +43,9 @@ draw_tiles = () => {
 		tile.innerHTML = '';
 		if (tiles[i].colour !== undefined) {
 			tile.innerHTML += `<div class='colour ${tiles[i].colour}'></div>`;
+			// FIXME: temporary visual element for tile owner indicator
+			// TODO: place this to the outer-side of the tile (e.g. top of the upper tiles, left-side of the left tiles)
+			tile.innerHTML += `<div class='tile_owner' id='tile_owner_${i}'></div>`;
 		}
 		tile.innerHTML += `${tiles[i].name}`;
 		tile.innerHTML += `<div class='tile_stop' id='tile_stop_${i}'></div>`;
