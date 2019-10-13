@@ -13,10 +13,10 @@ chests = [];
 chances = [];
 
 make_cards = () => {
-	path = con.PREPATH + 'card/';
-	e = con.ENCODING;
-	cc_names = fs.readFileSync(path + 'community_chests.txt', e).split(os.EOL);
-	c_names = fs.readFileSync(path + 'chances.txt', e).split(os.EOL);
+	let path = con.PREPATH + 'card/';
+	let e = con.ENCODING;
+	let cc_names = fs.readFileSync(path + 'community_chests.txt', e).split(os.EOL);
+	let c_names = fs.readFileSync(path + 'chances.txt', e).split(os.EOL);
 	for (i = 0; i < cc_names.length; i++) {
 		chests.push(new Card("chest", cc_names[i], i));
 		chances.push(new Card("chance", c_names[i], i));

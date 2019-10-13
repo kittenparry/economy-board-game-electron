@@ -63,60 +63,60 @@ availables = [];
 prep = con.PREPATH;
 e = con.ENCODING;
 make_props = () => {
-	path = prep + 'property/';
-	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
-	costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL).map(Number);
-	positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
-	colours = fs.readFileSync(path + 'colours.txt', e).split(os.EOL);
-	houses = fs.readFileSync(path + 'houses.txt', e).split(os.EOL);
-	hotels = fs.readFileSync(path + 'hotels.txt', e).split(os.EOL).map(Number);
-	rents = fs.readFileSync(path + 'rents.txt', e).split(os.EOL).map(Number);
+	let path = prep + 'property/';
+	let names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
+	let costs = fs.readFileSync(path + 'costs.txt', e).split(os.EOL).map(Number);
+	let positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
+	let colours = fs.readFileSync(path + 'colours.txt', e).split(os.EOL);
+	let houses = fs.readFileSync(path + 'houses.txt', e).split(os.EOL);
+	let hotels = fs.readFileSync(path + 'hotels.txt', e).split(os.EOL).map(Number);
+	let rents = fs.readFileSync(path + 'rents.txt', e).split(os.EOL).map(Number);
 	for (i = 0; i < names.length; i++) {
 		props.push(new Property(names[i], costs[i], positions[i], colours[i], houses[i].split(" ").map(Number), hotels[i], rents[i]));
 	}
 };
 make_decks = () => {
-	path = prep + 'deck/';
-	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
-	positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
+	let path = prep + 'deck/';
+	let names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
+	let positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
 	for (i = 0; i < names.length; i++) {
 		decks.push(new Deck(names[i], positions[i]));
 	}
 };
 make_stations = () => {
-	path = prep + 'station/';
-	names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
-	costs = 200;
-	positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
+	let path = prep + 'station/';
+	let names = fs.readFileSync(path + 'names.txt', e).split(os.EOL);
+	let costs = 200;
+	let positions = fs.readFileSync(path + 'positions.txt', e).split(os.EOL).map(Number);
 	for (i = 0; i < names.length; i++) {
 		stations.push(new Station(names[i], costs, positions[i]));
 	}
 };
 make_utils = () => {
-	names = ['Electric Company', 'Water Works'];
-	costs = 150;
-	positions = [12, 28];
+	let names = ['Electric Company', 'Water Works'];
+	let costs = 150;
+	let positions = [12, 28];
 	for (i = 0; i < names.length; i++) {
 		utils.push(new Util(names[i], costs, positions[i]));
 	}
 };
 make_taxes = () => {
-	names = ['Income Tax', 'Luxury Tax'];
-	costs = [200, 100];
-	positions = [4, 38];
+	let names = ['Income Tax', 'Luxury Tax'];
+	let costs = [200, 100];
+	let positions = [4, 38];
 	for (i = 0; i < names.length; i++) {
 		taxes.push(new Tax(names[i], costs[i], positions[i]));
 	}
 };
 make_miscs = () => {
-	names = ["GO", "In Jail/Just Visiting", "Free Parking", "Go to Jail"];
-	positions = [0, 10, 20, 30];
+	let names = ["GO", "In Jail/Just Visiting", "Free Parking", "Go to Jail"];
+	let positions = [0, 10, 20, 30];
 	for (i = 0; i < names.length; i++) {
 		miscs.push(new Misc(names[i], positions[i]));
 	}
 };
 make_tiles = () => {
-	combined = props.concat(decks, stations, utils, taxes, miscs);
+	let combined = props.concat(decks, stations, utils, taxes, miscs);
 	for (i = 0; i < 40; i++) {
 		combined.forEach(function(item) {
 			if (item.position == i) {
@@ -126,7 +126,7 @@ make_tiles = () => {
 	}
 };
 make_availables = () => {
-	combined = props.concat(stations, utils);
+	let combined = props.concat(stations, utils);
 	for (i = 0; i < 40; i++) {
 		combined.forEach(function(item) {
 			if (item.position == i) {
