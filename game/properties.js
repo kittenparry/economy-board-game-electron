@@ -118,7 +118,7 @@ make_miscs = () => {
 make_tiles = () => {
 	let combined = props.concat(decks, stations, utils, taxes, miscs);
 	for (i = 0; i < 40; i++) {
-		combined.forEach(function(item) {
+		combined.forEach((item) => {
 			if (item.position == i) {
 				tiles.push(item);
 			}
@@ -128,7 +128,7 @@ make_tiles = () => {
 make_availables = () => {
 	let combined = props.concat(stations, utils);
 	for (i = 0; i < 40; i++) {
-		combined.forEach(function(item) {
+		combined.forEach((item) => {
 			if (item.position == i) {
 				availables.push(item);
 			}

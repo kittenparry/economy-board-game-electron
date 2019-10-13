@@ -11,7 +11,7 @@ const {
 let main_window;
 
 //app ready
-app.on('ready', function() {
+app.on('ready', () => {
 	//create window
 	main_window = new BrowserWindow({
 		width: 1280,
@@ -25,7 +25,7 @@ app.on('ready', function() {
 		slashes: true,
 	}));
 	//quit on main window close
-	main_window.on('closed', function() {
+	main_window.on('closed', () => {
 		app.quit();
 	});
 	//build menu from template

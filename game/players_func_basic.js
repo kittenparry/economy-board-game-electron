@@ -122,7 +122,7 @@ class functions_basic {
 			}
 		} else if (p.stations.includes(prop)) {
 			var station_count = 0;
-			p.stations.forEach(function(station) {
+			p.stations.forEach((station) => {
 				if (station.owner == prop.owner) {
 					station_count += 1;
 				}
@@ -145,7 +145,7 @@ class functions_basic {
 			//4x dice if 1 owned, 10x dice if 2.
 			//prompt to roll die?
 			var util_count = 0;
-			p.utils.forEach(function(util) {
+			p.utils.forEach((util) => {
 				if (util.owner == prop.owner) {
 					util_count += 1;
 				}

@@ -56,7 +56,7 @@ draw_players = () => {
 	let avatars = players.avatars;
 	let doc = document.getElementById('div_players');
 	let temp = ''
-	avatars.forEach(function(avatar) {
+	avatars.forEach((avatar) => {
 		temp += `<div class='player_profile'>${avatar.avatar} $${avatar.money}</div>`
 		doc.innerHTML = temp;
 	});
@@ -74,7 +74,7 @@ draw_positions = () => {
 	for (i = 0; i < 40; i++) {
 		document.getElementById(`tile_stop_${i}`).innerHTML = '';
 	}
-	avatars.forEach(function(avatar) {
+	avatars.forEach((avatar) => {
 		doc = document.getElementById(`tile_stop_${avatar.position}`).innerHTML += `${avatar.avatar}`;
 	});
 };
